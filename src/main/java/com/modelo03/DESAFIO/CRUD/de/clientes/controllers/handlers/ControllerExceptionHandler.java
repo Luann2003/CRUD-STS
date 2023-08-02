@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.modelo03.DESAFIO.CRUD.de.clientes.dto.CustomError;
 import com.modelo03.DESAFIO.CRUD.de.clientes.dto.ValidationError;
+import com.modelo03.DESAFIO.CRUD.de.clientes.services.exceptions.DatabaseException;
 import com.modelo03.DESAFIO.CRUD.de.clientes.services.exceptions.ResourceNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,6 +22,13 @@ public class ControllerExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<CustomError> ResourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {
 		HttpStatus status = HttpStatus.NOT_FOUND;
+		CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+		return ResponseEntity.status(status).body(err);
+		}
+	
+	@ExceptionHandler(DatabaseException.class)
+	public ResponseEntity<CustomError> Database(DatabaseException e, HttpServletRequest request) {
+		HttpStatus status = HttpStatus.BAD_REQUEST;
 		CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
 		return ResponseEntity.status(status).body(err);
 		}
