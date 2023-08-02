@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import com.modelo03.DESAFIO.CRUD.de.clientes.entities.Client;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 
 public class ClientDTO {
 
@@ -15,6 +16,8 @@ public class ClientDTO {
 
 	private String cpf;
 	private Double income;
+	
+	@PastOrPresent
 	private LocalDate birthDate;
 	private Integer children;
 	
