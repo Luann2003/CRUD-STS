@@ -7,13 +7,16 @@ Este projeto foi desenvolvido para demonstrar a implementação de um sistema CR
 
 ### Funcionalidades
 
-- **Create (Criar):** Este projeto permite a adição de novos registros em um banco de dados por meio de uma interface de usuário ou API RESTful.
-
-- **Read (Ler):** Os registros existentes podem ser recuperados do banco de dados, seja individualmente ou em listas, para visualização ou processamento adicional.
-
-- **Update (Atualizar):** É possível fazer alterações nos registros existentes, atualizando as informações armazenadas no banco de dados.
-
-- **Delete (Excluir):** Registros indesejados podem ser removidos do banco de dados de forma segura.
+1. Busca por id retorna cliente existente
+2. Busca por id retorna 404 para cliente inexistente
+3. Busca paginada retorna listagem paginada corretamente
+4. Inserção de cliente insere cliente com dados válidos
+5. Inserção de cliente retorna 422 e mensagens customizadas com dados inválidos
+6. Atualização de cliente atualiza cliente com dados válidos
+7. Atualização de cliente retorna 404 para cliente inexistente
+8. Atualização de cliente retorna 422 e mensagens customizadas com dados inválidos
+9. Deleção de cliente deleta cliente existente
+10. Deleção de cliente retorna 404 para cliente inexistente
 
 ### Tecnologias Utilizadas
 
