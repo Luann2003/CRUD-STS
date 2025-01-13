@@ -14,7 +14,7 @@ public class CorsConfig {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**") // Permite todas as rotas
-						.allowedOrigins("http://localhost:4200") // Permite o domínio do front-end (Angular, por
+						.allowedOrigins("http://localhost:4200", "https://crud-front-alpha.vercel.app") // Permite o domínio do front-end (Angular, por
 																	// exemplo)
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
 						.allowedHeaders("*") // Permite todos os headers
